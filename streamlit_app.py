@@ -7,7 +7,14 @@ from datetime import timedelta
 
 # Carrega o modelo Whisper (medium) no dispositivo correto
 # WhisperModel("base", download_root="./models")
-model = WhisperModel("Systran/faster-whisper-base", device="cpu", compute_type="int8", download_root="./models", local_files_only=True)
+from faster_whisper import WhisperModel
+
+model = WhisperModel(
+    "/home/rafaelgard/projetos/transcribe_my_video/models/models--Systran--faster-whisper-base/snapshots/ebe41f70d5b6dfa9166e2c581c45c9c0cfc57b66",
+    device="cpu",
+    compute_type="int8"
+)
+
 
 st.title("🎙️ Crie Legendas Automáticas para seus Áudios")
 st.write("📤 Envie um arquivo de áudio (.mp3 ou .wav)")
