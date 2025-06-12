@@ -6,7 +6,7 @@ import srt
 from datetime import timedelta
 
 # Carrega o modelo Whisper (medium) no dispositivo correto
-WhisperModel("base", download_root="./models")
+# WhisperModel("base", download_root="./models")
 model = WhisperModel("./models/base", device='cpu', compute_type="int8")
 
 st.title("🎙️ Crie Legendas Automáticas para seus Áudios")
